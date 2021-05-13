@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { HeadProvider } from "react-head";
+import { Footer } from "./components/Footer";
+import { AcmeInsights } from "./components/AcmeInsights";
+import { UpcomingInsights } from "./components/UpcomingInsights";
+import { NavBar } from "./components/NavBar";
+import { Commitment } from "./components/Commitment";
+import { Banner } from "./components/Banner";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <HeadProvider>
+        <meta
+          name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0"
+        ></meta>
+      </HeadProvider>
+
+      <NavBar />
+
+      <Banner />
+
+      <AcmeInsights />
+
+      <Commitment />
+
+      <UpcomingInsights />
+
+      <Footer />
+    </>
   );
-}
+};
 
 export default App;
